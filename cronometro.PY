@@ -1,30 +1,23 @@
-import time
-import os
+import math
 
-class Cronometro:
-    def __init__(self, segundos=0, minutos=0, horas=0):
-        self.segundos = segundos
-        self.minutos = minutos
-        self.horas = horas  # Correção: Usar '=' para atribuir valor a self.horas
+class Esfera:
+    def __init__(self, cor, raio):
+        self.cor = cor
+        self.raio = raio
     
-    def __repr__(self):
-        return f'{self.horas:02d}:{self.minutos:02d}:{self.segundos:02d}'  # Correção: Espaço após o def e formatação correta
+    def volume(self):
+        vol = (4 / 3) * math.pi * (self.raio ** 3)
+        return vol
     
-    def incremento(self):
-        self.segundos += 1
-        if self.segundos >= 60:
-            self.segundos = 0
-            self.minutos += 1
-            if self.minutos >= 60:
-                self.minutos = 0
-                self.horas += 1
+    def area(self):
+        ar = 4 * math.pi * (self.raio ** 2)
+        return ar
 
-    def start(self):
-        while True:
-            os.system('cls')
-            print(self)
-            self.incremento()
-            time.sleep(1)
+bola1 = Esfera('vermelha', 4)
+bola2 = Esfera('azul', 7)
 
-cronometro1 = Cronometro()
-cronometro1.start()
+print(f'O volume da bola 1 é {bola1.volume()} cm^3')
+print(f'A área superficial da bola 1 é {bola1.area()} cm^2')
+
+print(bola1.volume())  # Retorna o volume da bola1
+print(Esfera.volume(bola1))  # Alternativamente, retorna o volume da bola1 usando a classe diretamente
