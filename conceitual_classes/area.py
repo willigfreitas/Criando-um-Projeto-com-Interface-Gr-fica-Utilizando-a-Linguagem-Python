@@ -13,7 +13,7 @@ class Retangulo:
     def area(self):
         return self.a * self.b
 
-from area import Retangulo
+from conceitual_classes.area import Retangulo
 import math
 
 while True:
