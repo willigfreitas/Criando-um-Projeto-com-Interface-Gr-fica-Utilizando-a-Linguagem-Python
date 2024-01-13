@@ -1,0 +1,3 @@
+teste@teste.com.br;senha123;Nome do Usuário;2022-01-12
+will@hot.com;123456;will;2024-01-13 06:19:44
+will@teste.com.br;123456;will;2024-01-13 06:20:07
